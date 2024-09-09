@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deadline Management</title>
+    <script defer src="script.js"></script>
+    <style>
+        /* General body styling */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+/* Header styling */
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+}
+
+/* Main content styling */
+main {
+    padding: 20px;
+}
+
+/* Form section styling */
+.form-section {
+    background: #fff;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-section h2 {
+    margin-top: 0;
+}
+
+form label {
+    display: block;
+    margin-top: 10px;
+}
+
+form input, form select {
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    width: 100%;
+}
+
+form button {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #555;
+}
+
+/* Table section styling */
+.table-section {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.table-section h2 {
+    margin-top: 0;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+}
+
+th, td {
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+button.edit-btn, button.delete-btn {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button.edit-btn {
+    background-color: #007bff;
+    color: #fff;
+}
+
+button.edit-btn:hover {
+    background-color: #dc3545;
+}
+
+button.delete-btn {
+    background-color: #dc3545;
+    color: #fff;
+}
+
+button.delete-btn:hover {
+    background-color: #007bff;
+}
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Deadline Management</h1>
+    </header>
+
+    <main>
+        <section class="form-section">
+            <h2>Add New Deadline</h2>
+            <form id="deadline-form">
+                <label for="project-name">Project Name:</label>
+                <input type="text" id="project-name" required>
+
+                <label for="deadline-date">Deadline Date:</label>
+                <input type="date" id="deadline-date" required>
+
+                <label for="status">Status:</label>
+                <select id="status" required>
+                    <option value="Upcoming">Upcoming</option>
+                    <option value="Overdue">Overdue</option>
+                    <option value="Completed">Completed</option>
+                </select>
+
+                <button type="submit">Add Deadline</button>
+            </form>
+        </section>
+
+        <section class="table-section">
+            <h2>Deadline List</h2>
+            <table id="deadline-table">
+                <thead>
+                    <tr>
+                        <th>Project Name</th>
+                        <th>Deadline Date</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Rows will be dynamically inserted here -->
+                </tbody>
+            </table>
+        </section>
+    </main>
+</body>
+</html>

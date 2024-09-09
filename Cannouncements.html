@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Announcements Page</title>
+    <script defer src="script.js"></script>
+    <style>
+        /* General body styling */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+/* Header styling */
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+}
+
+/* Main content styling */
+main {
+    padding: 20px;
+}
+
+/* Announcement form styling */
+.announcement-form {
+    background: #fff;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.announcement-form h2 {
+    margin-top: 0;
+}
+
+.announcement-form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+.announcement-form input[type="text"],
+.announcement-form input[type="date"],
+.announcement-form textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.announcement-form input[type="submit"] {
+    background-color: gray;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.announcement-form input[type="submit"]:hover {
+    background-color: rgb(0, 162, 255);
+}
+
+/* Announcements table styling */
+.announcements-list {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.announcements-list h2 {
+    margin-top: 0;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+}
+
+th, td {
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #f4f4f4;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .announcement-form input[type="submit"] {
+        width: 100%;
+        padding: 15px;
+    }
+}
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Announcements</h1>
+    </header>
+    
+    <main>
+        <section class="announcement-form">
+            <h2>Create Announcement</h2>
+            <form id="announcementForm">
+                <label for="announcement-title">Title:</label>
+                <input type="text" id="announcement-title" name="title" required>
+
+                <label for="announcement-date">Date:</label>
+                <input type="date" id="announcement-date" name="date" required>
+
+                <label for="announcement-content">Content:</label>
+                <textarea id="announcement-content" name="content" rows="4" required></textarea>
+
+                <input type="submit" value="Create Announcement">
+            </form>
+        </section>
+
+        <section class="announcements-list">
+            <h2>Existing Announcements</h2>
+            <table id="announcementsTable">
+                <thead>
+                    <tr>
+                        <th>Title</th>
+                        <th>Date</th>
+                        <th>Content</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Announcements will be dynamically inserted here -->
+                </tbody>
+            </table>
+        </section>
+    </main>
+</body>
+</html>

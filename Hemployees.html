@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employees Page</title>
+    <script defer src="script.js"></script>
+    <style>
+        /* General body styling */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+/* Header styling */
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+}
+
+/* Main content styling */
+main {
+    padding: 20px;
+}
+
+/* Employee overview styling */
+.employee-overview {
+    background: #fff;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.employee-overview h2 {
+    margin-top: 0;
+}
+
+.overview-stats {
+    margin-top: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input[type="number"],
+input[type="text"],
+input[type="date"],
+select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+button {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #555;
+}
+
+/* Employees table styling */
+.employees-list {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.employees-list h2 {
+    margin-top: 0;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+}
+
+th, td {
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #f4f4f4;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .overview-stats {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .stat {
+        width: 80%;
+    }
+}
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Employee Overview</h1>
+    </header>
+
+    <main>
+        <section class="employee-overview">
+            <h2>Employee Overview</h2>
+            <div class="overview-stats">
+                <form id="employeeForm">
+                    <div class="form-group">
+                        <label for="total-employees">Total Employees:</label>
+                        <input type="number" id="total-employees" name="total-employees">
+                    </div>
+                    <div class="form-group">
+                        <label for="new-hires">New Hires This Month:</label>
+                        <input type="number" id="new-hires" name="new-hires">
+                    </div>
+                    <div class="form-group">
+                        <label for="active-employees">Active Employees:</label>
+                        <input type="number" id="active-employees" name="active-employees">
+                    </div>
+                    <div class="form-group">
+                        <label for="inactive-employees">Inactive Employees:</label>
+                        <input type="number" id="inactive-employees" name="inactive-employees">
+                    </div>
+                    <button type="submit">Update Overview</button>
+                </form>
+            </div>
+        </section>
+
+        <section class="employees-list">
+            <h2>Employee List</h2>
+            <form id="addEmployeeForm">
+                <h3>Add New Employee</h3>
+                <div class="form-group">
+                    <label for="emp-id">ID:</label>
+                    <input type="text" id="emp-id" name="emp-id" required>
+                </div>
+                <div class="form-group">
+                    <label for="emp-name">Name:</label>
+                    <input type="text" id="emp-name" name="emp-name" required>
+                </div>
+                <div class="form-group">
+                    <label for="emp-position">Position:</label>
+                    <input type="text" id="emp-position" name="emp-position" required>
+                </div>
+                <div class="form-group">
+                    <label for="emp-status">Status:</label>
+                    <select id="emp-status" name="emp-status" required>
+                        <option value="Active">Active</option>
+                        <option value="Inactive">Inactive</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="emp-date-joined">Date Joined:</label>
+                    <input type="date" id="emp-date-joined" name="emp-date-joined" required>
+                </div>
+                <button type="submit">Add Employee</button>
+            </form>
+
+            <table id="employeesTable">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Position</th>
+                        <th>Status</th>
+                        <th>Date Joined</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Employees will be dynamically inserted here -->
+                </tbody>
+            </table>
+        </section>
+    </main>
+</body>
+</html>

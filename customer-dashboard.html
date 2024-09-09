@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Dashboard</title>
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.sidebar {
+    width: 200px;
+    background-color: #333;
+    color: #fff;
+    padding: 15px;
+    height: 100vh;
+    position: fixed;
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    margin: 15px 0;
+}
+
+.sidebar ul li a {
+    color: #fff;
+    text-decoration: none;
+    display: block;
+}
+
+.sidebar ul li a:hover {
+    background-color: #555;
+    padding: 10px;
+}
+
+.content {
+    margin-left: 220px;
+    padding: 20px;
+    flex-grow: 1;
+}
+
+.project-overview, .invoices, .support-tickets, .upcoming-meetings, .announcements {
+    margin-bottom: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+th {
+    background-color: #f4f4f4;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    margin-bottom: 10px;
+}
+
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <ul>
+            <li><a href="index.html">Dashboard</a></li>
+            <li><a href="Cprojects.html">Projects</a></li>
+            <li><a href="Cinvoices.html">Invoices</a></li>
+            <li><a href="Csupport.html">Support</a></li>
+            <li><a href="Cmeetings.html">Meetings</a></li>
+            <li><a href="Cannouncements.html">Announcements</a></li>
+            <li><a href="Cdocuments.html">Documents</a></li>
+            <li><a href="logout.html">Logout</a></li>
+        </ul>
+    </div>
+    <div class="content">
+        <h1>Customer Dashboard</h1>
+        <div class="project-overview">
+            <h2>Project Overview</h2>
+            <table id="projects-table">
+                <thead>
+                    <tr>
+                        <th>Project Name</th>
+                        <th>Status</th>
+                        <th>Deadline</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Project rows will be inserted here -->
+                </tbody>
+            </table>
+        </div>
+        <div class="invoices">
+            <h2>Invoices</h2>
+            <table id="invoices-table">
+                <thead>
+                    <tr>
+                        <th>Invoice Number</th>
+                        <th>Amount</th>
+                        <th>Status</th>
+                        <th>Due Date</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Invoice rows will be inserted here -->
+                </tbody>
+            </table>
+        </div>
+        <div class="support-tickets">
+            <h2>Support Tickets</h2>
+            <table id="support-tickets-table">
+                <thead>
+                    <tr>
+                        <th>Ticket ID</th>
+                        <th>Issue</th>
+                        <th>Status</th>
+                        <th>Created Date</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Support ticket rows will be inserted here -->
+                </tbody>
+            </table>
+        </div>
+        <div class="upcoming-meetings">
+            <h2>Upcoming Meetings</h2>
+            <ul id="meetings-list">
+                <!-- Meetings will be listed here -->
+            </ul>
+        </div>
+        <div class="announcements">
+            <h2>Announcements</h2>
+            <ul id="announcements-list">
+                <!-- Announcements will be listed here -->
+            </ul>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

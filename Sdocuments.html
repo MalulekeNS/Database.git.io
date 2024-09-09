@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documents</title>
+    <style>
+        /* Basic styling for the documents page */
+.container {
+    width: 80%;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+}
+
+.upload-section {
+    margin-bottom: 20px;
+}
+
+.upload-section form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.upload-section .form-group {
+    margin-bottom: 15px;
+    width: 100%;
+    max-width: 600px;
+}
+
+.upload-section .form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.upload-section .form-group input,
+.upload-section .form-group textarea,
+.upload-section .form-group select {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+}
+
+button {
+    padding: 10px 15px;
+    border: none;
+    background-color: gray;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    margin: 5px;
+}
+
+button:hover {
+    background-color: rgb(0, 174, 255);
+}
+
+#upload-message {
+    margin-top: 10px;
+    font-size: 16px;
+}
+
+.search-section {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.search-section input,
+.search-section select {
+    padding: 8px;
+    margin-right: 10px;
+}
+
+.search-section input {
+    width: 100%;
+    max-width: 400px;
+}
+
+.search-section select {
+    width: 200px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table th, table td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+table th {
+    background-color: #f4f4f4;
+}
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Documents</h1>
+
+        <!-- File upload section -->
+        <div class="upload-section">
+            <form id="upload-form">
+                <div class="form-group">
+                    <label for="fileUpload">Upload Document:</label>
+                    <input type="file" id="fileUpload" name="fileUpload" required>
+                </div>
+                <div class="form-group">
+                    <label for="fileTitle">Title:</label>
+                    <input type="text" id="fileTitle" name="fileTitle" required>
+                </div>
+                <div class="form-group">
+                    <label for="fileDescription">Description:</label>
+                    <textarea id="fileDescription" name="fileDescription" rows="3"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="shareWith">Share with:</label>
+                    <select id="shareWith" name="shareWith" multiple>
+                        <!-- Options will be populated by JavaScript -->
+                    </select>
+                </div>
+                <button type="button" id="share-btn">Share</button>
+                <button type="submit" id="upload-btn">Upload</button>
+            </form>
+            <div id="upload-message"></div>
+        </div>
+
+        <!-- Search bar and role filter -->
+        <div class="search-section">
+            <input type="text" id="search" placeholder="Search for documents...">
+            <select id="roleFilter">
+                <option value="">Filter by Role</option>
+                <!-- Options will be populated by JavaScript -->
+            </select>
+        </div>
+
+        <!-- Table for displaying documents -->
+        <table id="documents-table">
+            <thead>
+                <tr>
+                    <th>Document ID</th>
+                    <th>Title</th>
+                    <th>Description</th>
+                    <th>Uploaded By</th>
+                    <th>Date</th>
+                    <th>Shared With</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Data will be inserted here by JavaScript -->
+            </tbody>
+        </table>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Staff Performance Reviews - HR</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script defer src="script.js"></script>
+    <style>
+        /* General body styling */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+/* Header styling */
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+}
+
+/* Main content styling */
+main {
+    padding: 20px;
+}
+
+/* Metrics section styling */
+.metrics {
+    background: #fff;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.metrics h2 {
+    margin-top: 0;
+}
+
+.metric {
+    margin-bottom: 15px;
+}
+
+.metric h3 {
+    margin: 0;
+    font-size: 18px;
+}
+
+.metric p {
+    font-size: 24px;
+    margin: 0;
+}
+
+/* Chart section styling */
+.chart {
+    background: #fff;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.chart h2 {
+    margin-top: 0;
+}
+
+canvas {
+    width: 100%;
+    height: 400px;
+}
+
+/* Reviews section styling */
+.reviews {
+    background: #fff;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.reviews h2 {
+    margin-top: 0;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+}
+
+th, td {
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+/* Add review section styling */
+.add-review {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.add-review h2 {
+    margin-top: 0;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form label {
+    margin-top: 10px;
+}
+
+form input, form textarea {
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+form button {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #555;
+}
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Staff Performance Reviews</h1>
+    </header>
+
+    <main>
+        <section class="metrics">
+            <h2>Performance Metrics</h2>
+            <div class="metric">
+                <h3>Total Reviews:</h3>
+                <p id="total-reviews">0</p>
+            </div>
+            <div class="metric">
+                <h3>Average Rating:</h3>
+                <p id="average-rating">0</p>
+            </div>
+        </section>
+
+        <section class="chart">
+            <h2>Performance Trend</h2>
+            <canvas id="performance-chart"></canvas>
+        </section>
+
+        <section class="reviews">
+            <h2>Performance Reviews</h2>
+            <table id="reviews-table">
+                <thead>
+                    <tr>
+                        <th>Review Date</th>
+                        <th>Reviewer</th>
+                        <th>Ratings</th>
+                        <th>Comments</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Rows will be dynamically inserted here -->
+                </tbody>
+            </table>
+        </section>
+
+        <section class="add-review">
+            <h2>Add New Performance Review</h2>
+            <form id="review-form">
+                <label for="review-date">Review Date:</label>
+                <input type="date" id="review-date" required>
+
+                <label for="reviewer">Reviewer:</label>
+                <input type="text" id="reviewer" required>
+
+                <label for="ratings">Ratings:</label>
+                <input type="number" id="ratings" min="1" max="5" required>
+
+                <label for="comments">Comments:</label>
+                <textarea id="comments" rows="4" required></textarea>
+
+                <button type="submit">Submit Review</button>
+            </form>
+        </section>
+    </main>
+</body>
+</html>

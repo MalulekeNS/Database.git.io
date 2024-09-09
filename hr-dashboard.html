@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HR Dashboard</title>
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.sidebar {
+    width: 200px;
+    background-color: #333;
+    color: #fff;
+    padding: 15px;
+    height: 100vh;
+    position: fixed;
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    margin: 15px 0;
+}
+
+.sidebar ul li a {
+    color: #fff;
+    text-decoration: none;
+    display: block;
+}
+
+.sidebar ul li a:hover {
+    background-color: #555;
+    padding: 10px;
+}
+
+.content {
+    margin-left: 220px;
+    padding: 20px;
+    flex-grow: 1;
+}
+
+.employee-overview, .recruitment-status, .performance-metrics, .attendance-tracking, .recent-activities {
+    margin-bottom: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+th {
+    background-color: #f4f4f4;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    margin-bottom: 10px;
+}
+
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <ul>
+            <li><a href="index.html">Dashboard</a></li>
+            <li><a href="Hemployees.html">Employees</a></li>
+            <li><a href="Hrecruitment.html">Recruitment</a></li>
+            <li><a href="Hperformance.html">Performance</a></li>
+            <li><a href="Hattendance.html">Attendance</a></li>
+            <li><a href="Hdocuments.html">Documents</a></li>
+            <li><a href="logout.html">Logout</a></li>
+        </ul>
+    </div>
+    <div class="content">
+        <h1>HR Dashboard</h1>
+        <div class="employee-overview">
+            <h2>Employee Overview</h2>
+            <p>Total Employees: <span id="total-employees">0</span></p>
+            <p>New Hires This Month: <span id="new-hires">0</span></p>
+            <p>Active Employees: <span id="active-employees">0</span></p>
+            <p>Inactive Employees: <span id="inactive-employees">0</span></p>
+        </div>
+        <div class="recruitment-status">
+            <h2>Recruitment Status</h2>
+            <table id="recruitment-table">
+                <thead>
+                    <tr>
+                        <th>Position</th>
+                        <th>Status</th>
+                        <th>Open Since</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Recruitment rows will be inserted here -->
+                </tbody>
+            </table>
+        </div>
+        <div class="performance-metrics">
+            <h2>Performance Metrics</h2>
+            <div id="performance-chart">
+                <!-- Chart will be rendered here -->
+            </div>
+        </div>
+        <div class="attendance-tracking">
+            <h2>Attendance Tracking</h2>
+            <table id="attendance-table">
+                <thead>
+                    <tr>
+                        <th>Employee</th>
+                        <th>Days Absent</th>
+                        <th>Days Present</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Attendance rows will be inserted here -->
+                </tbody>
+            </table>
+        </div>
+        <div class="recent-activities">
+            <h2>Recent HR Activities</h2>
+            <ul id="activities-list">
+                <!-- Recent activities will be listed here -->
+            </ul>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

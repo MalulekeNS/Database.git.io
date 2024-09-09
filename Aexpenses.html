@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expenses Page</title>
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+header {
+    background-color: gray;
+    color: #fff;
+    padding: 15px;
+    text-align: center;
+}
+
+main {
+    padding: 20px;
+    max-width: 900px;
+    margin: 20px auto;
+}
+
+form {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+form input, form button {
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+form button {
+    background-color: gray;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+form button:hover {
+    background-color: grey;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+table th, table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+table th {
+    background-color: gray;
+    color: white;
+}
+
+table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+table tr:hover {
+    background-color: #f1f1f1;
+}
+
+@media (max-width: 768px) {
+    form input, form button {
+        width: 100%;
+    }
+}
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Expenses</h1>
+    </header>
+
+    <main>
+        <form id="expense-form">
+            <input type="text" id="expenseId" placeholder="Expense ID" required>
+            <input type="text" id="description" placeholder="Description" required>
+            <input type="number" id="amount" placeholder="Amount" step="0.01" required>
+            <input type="date" id="date" required>
+            <button type="submit">Add Expense</button>
+        </form>
+
+        <table id="expenses-table">
+            <thead>
+                <tr>
+                    <th>Expense ID</th>
+                    <th>Description</th>
+                    <th>Amount</th>
+                    <th>Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Expense data will be inserted here by JavaScript -->
+            </tbody>
+        </table>
+    </main>
+
+    <script>
+        const form = document.getElementById('expense-form');
+        form.addEventListener('submit', async (event) => {
+            event.preventDefault();
+
+            const expense = {
+                expenseId: document.getElementById('expenseId').value,
+                description: document.getElementById('description').value,
+                amount: parseFloat(document.getElementById('amount').value),
+                date: document.getElementById('date').value
+            };
+
+            try {
+                const response = await fetch('http://localhost:5000/api/expenses', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(expense)
+                });
+
+                if (!response.ok) {
+                    throw new Error('Failed to add expense');
+                }
+
+                const newExpense = await response.json();
+                addExpenseToTable(newExpense);
+                form.reset();
+            } catch (error) {
+                console.error('Error:', error);
+            }
+        });
+
+        function addExpenseToTable(expense) {
+            const tableBody = document.getElementById('expenses-table').querySelector('tbody');
+            const row = document.createElement('tr');
+            row.innerHTML = `
+                <td>${expense.expenseId}</td>
+                <td>${expense.description}</td>
+                <td>$${expense.amount.toFixed(2)}</td>
+                <td>${new Date(expense.date).toLocaleDateString()}</td>
+            `;
+            tableBody.appendChild(row);
+        }
+    </script>
+</body>
+</html>

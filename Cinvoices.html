@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invoices</title>
+    <style>
+        /* Basic styling for the invoices page */
+.container {
+    width: 80%;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.search-section {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.search-section input {
+    padding: 8px;
+    width: 100%;
+    max-width: 400px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+table th, table td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+table th {
+    background-color: #f4f4f4;
+}
+
+button {
+    padding: 8px 12px;
+    border: none;
+    background-color: gray;
+    color: white;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: rgb(0, 140, 255);
+}
+
+.form-container {
+    margin-top: 20px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+}
+
+.form-container h2 {
+    margin-top: 0;
+}
+
+form label {
+    display: block;
+    margin-top: 10px;
+}
+
+form input, form select {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+}
+
+form button {
+    margin-top: 20px;
+}
+
+#cancel-btn {
+    background-color: #f44336;
+}
+
+#cancel-btn:hover {
+    background-color: rgb(0, 140, 255);
+}
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Invoices</h1>
+
+        <!-- Search bar -->
+        <div class="search-section">
+            <input type="text" id="search" placeholder="Search for invoices...">
+        </div>
+
+        <!-- Table for displaying invoices -->
+        <table id="invoices-table">
+            <thead>
+                <tr>
+                    <th>Invoice ID</th>
+                    <th>Client Name</th>
+                    <th>Amount</th>
+                    <th>Status</th>
+                    <th>Due Date</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Data will be inserted here by JavaScript -->
+            </tbody>
+        </table>
+
+        <!-- Form for adding or updating invoices -->
+        <div class="form-container">
+            <h2 id="form-title">Add New Invoice</h2>
+            <form id="invoice-form">
+                <input type="hidden" id="invoice-id" name="invoiceId">
+
+                <label for="client-name">Client Name:</label>
+                <input type="text" id="client-name" name="clientName" required>
+
+                <label for="amount">Amount:</label>
+                <input type="number" id="amount" name="amount" step="0.01" required>
+
+                <label for="status">Status:</label>
+                <select id="status" name="status" required>
+                    <option value="Paid">Paid</option>
+                    <option value="Pending">Pending</option>
+                    <option value="Overdue">Overdue</option>
+                </select>
+
+                <label for="due-date">Due Date:</label>
+                <input type="date" id="due-date" name="dueDate" required>
+
+                <button type="submit">Save Invoice</button>
+                <button type="button" id="cancel-btn">Cancel</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

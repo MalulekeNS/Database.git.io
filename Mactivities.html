@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Activities</title>
+    <style>
+        /* Basic styling for the activities page */
+.container {
+    width: 80%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+}
+
+form {
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+}
+
+button {
+    padding: 10px 15px;
+    border: none;
+    background-color: gray;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: rgb(29, 128, 209);
+}
+
+#message {
+    margin-top: 20px;
+    font-size: 16px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table th, table td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+table th {
+    background-color: #f4f4f4;
+}
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Activities</h1>
+        <form id="activity-form">
+            <div class="form-group">
+                <label for="activityId">Activity ID:</label>
+                <input type="text" id="activityId" name="activityId" required>
+            </div>
+            <div class="form-group">
+                <label for="activityDescription">Description:</label>
+                <input type="text" id="activityDescription" name="activityDescription" required>
+            </div>
+            <div class="form-group">
+                <label for="activityDate">Date:</label>
+                <input type="date" id="activityDate" name="activityDate" required>
+            </div>
+            <button type="submit">Add Activity</button>
+        </form>
+        <div id="message"></div>
+
+        <h2>Existing Activities</h2>
+        <table id="activities-table">
+            <thead>
+                <tr>
+                    <th>Activity ID</th>
+                    <th>Description</th>
+                    <th>Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Data will be inserted here by JavaScript -->
+            </tbody>
+        </table>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

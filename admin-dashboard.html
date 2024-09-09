@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    min-height: 100vh;
+}
+
+.sidebar {
+    width: 200px;
+    background-color: #333;
+    color: #fff;
+    padding: 15px;
+    height: 100vh;
+    position: fixed;
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    margin: 15px 0;
+}
+
+.sidebar ul li a {
+    color: #fff;
+    text-decoration: none;
+    display: block;
+}
+
+.sidebar ul li a:hover {
+    background-color: #555;
+    padding: 10px;
+}
+
+.content {
+    margin-left: 220px;
+    padding: 20px;
+    flex-grow: 1;
+}
+
+.user-management, .system-statistics, .project-overview, .financial-overview, .recent-activities, .announcements {
+    margin-bottom: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+th {
+    background-color: #f4f4f4;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    margin-bottom: 10px;
+}
+/**************************************************upload dcocuments********************************************/
+/* Add these styles to your existing CSS file */
+
+.document-management form {
+    margin-bottom: 20px;
+}
+
+.document-management input[type="file"] {
+    margin-right: 10px;
+}
+
+.document-management button {
+    padding: 5px 10px;
+}
+
+#documents-table th, #documents-table td {
+    text-align: center;
+}
+
+.actions button {
+    margin: 0 5px;
+}
+
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <ul>
+            <li><a href="index.html">Dashboard</a></li>
+            <li><a href="Muser.html">User Management</a></li>
+            <li><a href="Mprojects.html">Projects</a></li>
+            <li><a href="Mfinancials.html">Financials</a></li>
+            <li><a href="Mactivities.html">Activities</a></li>
+            <li><a href="Mannouncements.html">Announcements</a></li>
+            <li><a href="Mdocuments.html">Documents</a></li>
+            <li><a href="logout.html">Logout</a></li>
+        </ul>
+    </div>
+    <div class="content">
+        <h1>Admin Dashboard</h1>
+        <div class="user-management">
+            <h2>User Management</h2>
+            <table id="users-table">
+                <thead>
+                    <tr>
+                        <th>User ID</th>
+                        <th>Name</th>
+                        <th>Role</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- User rows will be inserted here -->
+                </tbody>
+            </table>
+        </div>
+        <div class="system-statistics">
+            <h2>System Statistics</h2>
+            <div id="stats">
+                <!-- Statistics will be displayed here -->
+            </div>
+        </div>
+        <div class="project-overview">
+            <h2>Project Overview</h2>
+            <table id="projects-table">
+                <thead>
+                    <tr>
+                        <th>Project Name</th>
+                        <th>Status</th>
+                        <th>Deadline</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Project rows will be inserted here -->
+                </tbody>
+            </table>
+        </div>
+        <div class="financial-overview">
+            <h2>Financial Overview</h2>
+            <div id="financials">
+                <!-- Financial overview will be displayed here -->
+            </div>
+        </div>
+        <div class="recent-activities">
+            <h2>Recent Activities</h2>
+            <ul id="activities-list">
+                <!-- Recent activities will be listed here -->
+            </ul>
+        </div>
+        <div class="announcements">
+            <h2>Announcements</h2>
+            <ul id="announcements-list">
+                <!-- Announcements will be listed here -->
+            </ul>
+        </div>
+        <br>
+        <div class="document-management">
+            <h2>Upload Document</h2>
+            <form id="upload-form" enctype="multipart/form-data">
+                <input type="file" id="document" name="document" required />
+                <button type="submit">Upload Document</button>
+            </form>
+
+            <h2>Manage Documents</h2>
+            <table id="documents-table">
+                <thead>
+                    <tr>
+                        <th>Document Name</th>
+                        <th>Upload Date</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Document rows will be inserted here -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+    <script src="script.js"></script>
+</body>
+</html>

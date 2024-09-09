@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recruitment Page</title>
+    <script defer src="script.js"></script>
+    <style>
+        /* General body styling */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+/* Header styling */
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+}
+
+/* Main content styling */
+main {
+    padding: 20px;
+}
+
+/* Vacancy list styling */
+.vacancy-list {
+    background: #fff;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.vacancy-list h2 {
+    margin-top: 0;
+}
+
+/* Add vacancy form styling */
+.add-vacancy {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.add-vacancy h2 {
+    margin-top: 0;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="date"],
+select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+button {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #555;
+}
+
+/* Table styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+}
+
+th, td {
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #f4f4f4;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .add-vacancy {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .form-group {
+        width: 80%;
+    }
+}
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Recruitment Page</h1>
+    </header>
+
+    <main>
+        <section class="vacancy-list">
+            <h2>Job Vacancies</h2>
+            <table id="vacanciesTable">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Position</th>
+                        <th>Department</th>
+                        <th>Status</th>
+                        <th>Posted Date</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Job vacancies will be dynamically inserted here -->
+                </tbody>
+            </table>
+        </section>
+
+        <section class="add-vacancy">
+            <h2>Add New Vacancy</h2>
+            <form id="addVacancyForm">
+                <div class="form-group">
+                    <label for="vac-id">ID:</label>
+                    <input type="text" id="vac-id" name="vac-id" required>
+                </div>
+                <div class="form-group">
+                    <label for="vac-position">Position:</label>
+                    <input type="text" id="vac-position" name="vac-position" required>
+                </div>
+                <div class="form-group">
+                    <label for="vac-department">Department:</label>
+                    <input type="text" id="vac-department" name="vac-department" required>
+                </div>
+                <div class="form-group">
+                    <label for="vac-status">Status:</label>
+                    <select id="vac-status" name="vac-status" required>
+                        <option value="Open">Open</option>
+                        <option value="Closed">Closed</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="vac-posted-date">Posted Date:</label>
+                    <input type="date" id="vac-posted-date" name="vac-posted-date" required>
+                </div>
+                <button type="submit">Add Vacancy</button>
+            </form>
+        </section>
+    </main>
+</body>
+</html>
